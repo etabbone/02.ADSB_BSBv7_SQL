@@ -1,0 +1,4 @@
+﻿https://www.sqlite.org/download.html
+1/ Unzip https://www.sqlite.org/2016/sqlite-tools-osx-x86-3100100.zip (or newer version) in any folder.
+2/ In Windows, open Control Panel / System / Avanced System Settings / Environment Variables
+3/ Modify the 'Path' reference by adding to the end the new sqlite3 folder name (ex: C:\Program Files\sqlite3)

@@ -1,0 +1,7 @@
+py2exe used to compile Python script in Windows exe
+
+- Installation
+py -3.4 -m pip install py2exe
+
+- Compress (all in one)
+py -3.4 -m py2exe.build_exe dump1090sql.py -b 0
