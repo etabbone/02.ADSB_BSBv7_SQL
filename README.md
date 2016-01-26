@@ -31,4 +31,4 @@ SUMARIO (dump1090sql.doc)
 11. AJUDA EM LINHA DE COMANDO                   17
 12. SERVIDOR DUMP1090                           18
 
-Read "dump1090sql.doc" for more information (Yes it's in French!!! but it's easy to understand).
+Leia "dump1090sql.doc" para mais informações (em francês!!! mas é fácil de entender...).
