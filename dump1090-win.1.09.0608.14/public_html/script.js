@@ -202,7 +202,7 @@ function initialize() {
 	window.setInterval(function() {
 		fetchData();
 		refreshTableInfo();
-		refreshSelected();
+		refreshSelected(false);
 		reaper();
 		extendedPulse();
 	}, 1000);
@@ -230,8 +230,9 @@ function reaper() {
 } 
 
 // Refresh the detail window about the plane
-function refreshSelected() {
+function refreshSelected(gotomap) {
     var selected = false;
+    localStorage['ZoomLvl']   = CONST_ZOOMLVL;
 	if (typeof SelectedPlane !== 'undefined' && SelectedPlane != "ICAO" && SelectedPlane != null) {
     	selected = Planes[SelectedPlane];
     }
@@ -263,8 +264,14 @@ function refreshSelected() {
 	} else if (selected && selected.squawk == 7700) { // General Emergency
 		html += '&nbsp;<span class="squawk7700">&nbsp;Squawking: General Emergency&nbsp;</span>';
 	} else if (selected && selected.flight != '') {
+        html += '&nbsp;<a href="http://fr24.com/'+selected.flight+'" target="_blank">[FR24]</a>';
 	    html += '&nbsp;<a href="http://www.flightstats.com/go/FlightStatus/flightStatusByFlight.do?';
         html += 'flightNumber='+selected.flight+'" target="_blank">[FlightStats]</a>';
+	    html += '&nbsp;<a href="http://flightaware.com/live/flight/'+selected.flight+'" target="_blank">[FlightAware]</a>';
+        /*
+	    html += '&nbsp;<a href="http://www.flightstats.com/go/FlightStatus/flightStatusByFlight.do?';
+        html += 'flightNumber='+selected.flight+'" target="_blank">[FlightStats]</a>';
+        */
 	}
 	html += '<td></tr>';
 	
@@ -313,7 +320,9 @@ function refreshSelected() {
 	html += '<tr><td colspan="' + columns + '" align="center">Lat/Long: ';
 	if (selected && selected.vPosition) {
 	    html += selected.latitude + ', ' + selected.longitude + '</td></tr>';
-	    
+	    if (gotomap) {
+            GoogleMap.setCenter(new google.maps.LatLng(parseFloat(selected.latitude), parseFloat(selected.longitude)));
+            }
 	    // Let's show some extra data if we have site coordinates
 	    if (SiteShow) {
             var siteLatLon  = new google.maps.LatLng(SiteLat, SiteLon);
@@ -470,16 +479,34 @@ function refreshTableInfo() {
     } else {
         $('#SpecialSquawkWarning').css('display', 'none');
     }
-
-	// Click event for table
-	$('#planes_table').find('tr').click( function(){
-		var hex = $(this).find('td:first').text();
-		if (hex != "ICAO") {
-			selectPlaneByHex(hex);
-			refreshTableInfo();
-			refreshSelected();
-		}
-	});
+    
+    var DELAY = 700, clicks = 0, timer = null;
+    $('#planes_table').find('tr').on("click", function(e){
+        var hex = $(this).find('td:first').text();
+        clicks++;  //count clicks
+        if(clicks === 1) {
+            timer = setTimeout(function() {
+                clicks = 0;             //after action performed, reset counter
+                if (hex != "ICAO") {
+                    selectPlaneByHex(hex);
+                    refreshTableInfo();
+                    refreshSelected(false);  
+                }
+            }, DELAY);
+        } else {
+            clearTimeout(timer);    //prevent single-click action
+            if (hex != "ICAO") {
+                selectPlaneByHex(hex);
+                
+                refreshSelected(true);
+                refreshTableInfo();
+            }
+            clicks = 0;             //after action performed, reset counter
+        }
+    })
+    .on("dblclick", function(e){
+        e.preventDefault();  //cancel system double-click event
+    });
 
 	sortTable("tableinfo");
 }
@@ -573,7 +600,7 @@ function selectPlaneByHex(hex) {
 	} else { 
 		SelectedPlane = null;
 	}
-    refreshSelected();
+    refreshSelected(false);
     refreshTableInfo();
 }
 
@@ -596,7 +623,7 @@ function resetMap() {
 	    selectPlaneByHex(SelectedPlane);
 	}
 
-	refreshSelected();
+	refreshSelected(false);
 	refreshTableInfo();
 }
 

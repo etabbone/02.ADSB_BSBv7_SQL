@@ -242,7 +242,7 @@ var planeObject = {
 				path.push(new google.maps.LatLng(this.latitude, this.longitude));
 			} else {
 				this.line = new google.maps.Polyline({
-					strokeColor: '#000000',
+					strokeColor: '#E0FFFF',
 					strokeOpacity: 1.0,
 					strokeWeight: 3,
 					map: GoogleMap,

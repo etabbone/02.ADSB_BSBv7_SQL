@@ -1,0 +1,11 @@
+# 02.ADSB_BSBv7_SQL\dump1090-win.1.09.0608.14\public_html
+# DUMP1090 HTML Server modifications
+
+Added: 01DB/ACOEM Logo
+Modified: Plane color
+Modified: Fly color
+Added: Links to externals sites
+Added: Lat/lon double click to reset the map on a plane
+Modified: Map center on Brasilia BSB airport 
+Added: Distance circles on Brasilia BSB airport
+Deleted: One analog clock
