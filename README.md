@@ -16,7 +16,7 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 
 'dump1090' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’.
 
-SUMARIO
+SUMARIO (dump1090sql.doc)
 
 01. ESTRUTURA DA PASTA C:\DUMP1090SQL           4
 02. INSTALAÇÃO DOS DRIVERS ZADIG E UTILITARIOS  5
@@ -30,3 +30,5 @@ SUMARIO
 10. DUMP1090SQL COM A OPÇÃO "INTRACTIVE"        16
 11. AJUDA EM LINHA DE COMANDO                   17
 12. SERVIDOR DUMP1090                           18
+
+Read "dump1090sql.doc" for more information (Yes it's in French!!! but it's easy to understand).
