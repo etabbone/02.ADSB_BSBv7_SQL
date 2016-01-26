@@ -1,32 +1,32 @@
 # 02.ADSB_BSBv7_SQL
 Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).
 
-Este documento descreve a instalaÁ„o de dois programas para tratar os dados ADS-B (sinais de transponders dos aviıes comerciais) a partir do programa 'dump1090':
+Este documento descreve a instala√ß√£o de dois programas para tratar os dados ADS-B (sinais de transponders dos avi√µes comerciais) a partir do programa 'dump1090':
 
-	- 'Dump1090sqlí, armazena as informaÁıes em uma base SQLite3 e/ou arquivos de texto.
-	- 'Dump1090report' , cria relatÛrios em CSV (compatÌvel com os arquivos Excel).
+	- 'Dump1090sql‚Äô, armazena as informa√ß√µes em uma base SQLite3 e/ou arquivos de texto.
+	- 'Dump1090report' , cria relat√≥rios em CSV (compat√≠vel com os arquivos Excel).
 
-Os dois primeiros programas, 'dump1090' e 'dump1090sql' podem ser instalados como serviÁos Windows e ser„o executados automaticamente ao reiniciar o PC. A gravaÁ„o dos dados nos arquivos textos e na base de dados ser· realizada 24h/24h. Um sistema de compress„o (formato .zip) e envio autom·tico de arquivos por e-mail nos finais de meses est· incluÌdo nestes programas. Estes dois programas podem ser instalados em duas m·quinas remotas, basta que estejam na mesma rede (independentemente do tipo de O.S.).
-O programa 'dump1090sql' funciona 24h/24h para alimentar as bases de dados e/ou os arquivos. O programa 'dump1090reportí ser· utilizado nos finais de meses para gerar relatÛrios a partir das informaÁıes dos vÙos (dados dump1090sql), arquivos de alertas das estaÁıes de monitoramento de ruÌdos DUO ou Cube (arquivos no formato .xls Excel) e do banco de dados 'basestation.sqbí que contÈm informaÁıes sobre aeronaves e n˙meros de vÙos.
-Esses programas funcionam nos ambientes Windows, Linux ou OS X e utilizam scripts Python (vers„o > 2.7) e banco de dados SQLite3. O programa 'dump1090' corresponde a vers„o original n„o modificada, apenas as p·ginas HTML p˙blicas do servidor embutido no programa foram modificadas para adicionar novos recursos (cÌrculos de distancias, links para sites externos... ).
+Os dois primeiros programas, 'dump1090' e 'dump1090sql' podem ser instalados como servi√ßos Windows e ser√£o executados automaticamente ao reiniciar o PC. A grava√ß√£o dos dados nos arquivos textos e na base de dados ser√° realizada 24h/24h. Um sistema de compress√£o (formato .zip) e envio autom√°tico de arquivos por e-mail nos finais de meses est√° inclu√≠do nestes programas. Estes dois programas podem ser instalados em duas m√°quinas remotas, basta que estejam na mesma rede (independentemente do tipo de O.S.).
+O programa 'dump1090sql' funciona 24h/24h para alimentar as bases de dados e/ou os arquivos. O programa 'dump1090report‚Äô ser√° utilizado nos finais de meses para gerar relat√≥rios a partir das informa√ß√µes dos v√¥os (dados dump1090sql), arquivos de alertas das esta√ß√µes de monitoramento de ru√≠dos DUO ou Cube (arquivos no formato .xls Excel) e do banco de dados 'basestation.sqb‚Äô que cont√©m informa√ß√µes sobre aeronaves e n√∫meros de v√¥os.
+Esses programas funcionam nos ambientes Windows, Linux ou OS X e utilizam scripts Python (vers√£o > 2.7) e banco de dados SQLite3. O programa 'dump1090' corresponde a vers√£o original n√£o modificada, apenas as p√°ginas HTML p√∫blicas do servidor embutido no programa foram modificadas para adicionar novos recursos (c√≠rculos de distancias, links para sites externos... ).
 
-Na vers„o Windows apresentado aqui, o script Python foi compilado em um ˙nico arquivo execut·vel .exe para maior praticidade. Todos os arquivos devem estar na pasta 'c:\ dump1090sql' (modificar os arquivos de configuraÁ„o .ini para trocar de pasta).
-Baixe e descompacte o arquivo 'dump1090-winí na mesma pasta (vers„o Windows do programa Linux DUMP1090). Pode-se tambÈm instalar o programa SQLiteStudio para verificar o conte˙do das bases de dados, de preferÍncia em uma subpasta (http://sqlitestudio.pl/).
+Na vers√£o Windows apresentado aqui, o script Python foi compilado em um √∫nico arquivo execut√°vel .exe para maior praticidade. Todos os arquivos devem estar na pasta 'c:\ dump1090sql' (modificar os arquivos de configura√ß√£o .ini para trocar de pasta).
+Baixe e descompacte o arquivo 'dump1090-win‚Äô na mesma pasta (vers√£o Windows do programa Linux DUMP1090). Pode-se tamb√©m instalar o programa SQLiteStudio para verificar o conte√∫do das bases de dados, de prefer√™ncia em uma subpasta (http://sqlitestudio.pl/).
 
 
-'dump1090' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuÌdo sobre licenÁa ëBSD three clause licenseí.
+'dump1090' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribu√≠do sobre licen√ßa ‚ÄòBSD three clause license‚Äô.
 
 SUMARIO
 
-01. ESTRUTURA DA PASTA C:\DUMP1090SQL			4
-02. INSTALA«√O DOS DRIVERS ZADIG E UTILITARIOS 	5
-03. INSTALA«√O DO SERVI«O DUMP1090 				5
-04. INSTALAR O SERVI«O DUMP1090SQL 				7
-05. VERIFICA«√O 								8
-06. ARQUIVO ëDUMP1090SQL.INI'					9
-07. ESTRUTURA DAS PASTAS						10
-08. CRIAR UM RELATORIO							11
-09. FORMATO DOS ARQUIVOS .xls ìALARMA RUÕDOS" 	16
-10. DUMP1090SQL COM A OP«√O "INTRACTIVE" 		16
-11. AJUDA EM LINHA DE COMANDO 					17
-12. SERVIDOR DUMP1090							18
+01. ESTRUTURA DA PASTA C:\DUMP1090SQL           4
+02. INSTALA√á√ÉO DOS DRIVERS ZADIG E UTILITARIOS  5
+03. INSTALA√á√ÉO DO SERVI√áO DUMP1090              5
+04. INSTALAR O SERVI√áO DUMP1090SQL              7
+05. VERIFICA√á√ÉO                                 8
+06. ARQUIVO 'DUMP1090SQL.INI'                   9
+07. ESTRUTURA DAS PASTAS                        10
+08. CRIAR UM RELATORIO                          11
+09. FORMATO DOS ARQUIVOS .xls ‚ÄúALARMA RU√çDOS"   16
+10. DUMP1090SQL COM A OP√á√ÉO "INTRACTIVE"        16
+11. AJUDA EM LINHA DE COMANDO                   17
+12. SERVIDOR DUMP1090                           18
