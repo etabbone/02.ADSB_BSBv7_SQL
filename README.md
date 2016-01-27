@@ -35,14 +35,16 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 
 *Ler "<b>[dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc)</b>" para mais informações* (em francês!!! mas é fácil de entender...).
 
+
 **Command line**
-$ dump1090sql --help
-
+<p>$ dump1090sql --help</p>
+<br/>
 *Usage:*
-$ dump1090sql [option(s)]
-
-
+<p>$ dump1090sql [option(s)]</p>
+<br/>
 *Options:*
+```
+
   -h, --help                 Show this help message and exit
       --ip "ip"              Set HTTP server IP (default: 127.0.0.1)
       --port "port"          Set HTTP server port (default: 8080)
@@ -74,3 +76,4 @@ $ dump1090sql [option(s)]
   -v, --version              Show software version
 
 Type CTRL+C to exit
+```
