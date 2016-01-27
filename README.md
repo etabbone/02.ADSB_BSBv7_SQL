@@ -1,4 +1,4 @@
-# 02.ADSB_BSBv7_SQL
+﻿# 02.ADSB_BSBv7_SQL
 **Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
 
 Este documento descreve a instalação de dois programas para tratar os dados ADS-B (sinais de transponders dos aviões comerciais) a partir do programa 'dump1090':
@@ -38,10 +38,10 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 **Command line**
 $ dump1090sql --help
 
-Usage:
-dump1090sql [options]
+*Usage:*
+$ dump1090sql [options]
 
-Options:
+*Options:*
   -h, --help                 Show this help message and exit
       --ip "ip"              Set HTTP server IP (default: 127.0.0.1)
       --port "port"          Set HTTP server port (default: 8080)
