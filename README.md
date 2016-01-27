@@ -1,5 +1,5 @@
 # 02.ADSB_BSBv7_SQL
-Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).
+**Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
 
 Este documento descreve a instalação de dois programas para tratar os dados ADS-B (sinais de transponders dos aviões comerciais) a partir do programa 'dump1090':
 
@@ -14,9 +14,11 @@ Na versão Windows apresentado aqui, o script Python foi compilado em um único 
 Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows do programa Linux DUMP1090). Pode-se também instalar o programa SQLiteStudio para verificar o conteúdo das bases de dados, de preferência em uma subpasta (http://sqlitestudio.pl/).
 
 
-'dump1090' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’.
+'[dump1090](https://github.com/MalcolmRobb/dump1090)' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’.
 
-SUMARIO (dump1090sql.doc)
+![alt tag](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/fluxo%20de%20dados.jpg)
+
+**Sumário** ([dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc))
 
 01. ESTRUTURA DA PASTA C:\DUMP1090SQL           4
 02. INSTALAÇÃO DOS DRIVERS ZADIG E UTILITARIOS  5
@@ -31,4 +33,4 @@ SUMARIO (dump1090sql.doc)
 11. AJUDA EM LINHA DE COMANDO                   17
 12. SERVIDOR DUMP1090                           18
 
-Ler "dump1090sql.doc" para mais informações (em francês!!! mas é fácil de entender...).
+*Ler "<b>[dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc)</b>" para mais informações* (em francês!!! mas é fácil de entender...).
