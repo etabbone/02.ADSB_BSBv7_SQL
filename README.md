@@ -20,36 +20,44 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 
 **Sumário** ([dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc))
 
-01. ESTRUTURA DA PASTA C:\DUMP1090SQL           4
-02. INSTALAÇÃO DOS DRIVERS ZADIG E UTILITARIOS  5
-03. INSTALAÇÃO DO SERVIÇO DUMP1090              5
-04. INSTALAR O SERVIÇO DUMP1090SQL              7
-05. VERIFICAÇÃO                                 8
-06. ARQUIVO 'DUMP1090SQL.INI'                   9
-07. ESTRUTURA DAS PASTAS                        10
-08. CRIAR UM RELATORIO                          11
-09. FORMATO DOS ARQUIVOS .xls “ALARMA RUÍDOS"   16
-10. DUMP1090SQL COM A OPÇÃO "INTRACTIVE"        16
-11. AJUDA EM LINHA DE COMANDO                   17
-12. SERVIDOR DUMP1090                           18
+01. ESTRUTURA DA PASTA C:\DUMP1090SQL, 4
+02. INSTALAÇÃO DOS DRIVERS ZADIG E UTILITARIOS, 5
+03. INSTALAÇÃO DO SERVIÇO DUMP1090, 5
+04. INSTALAR O SERVIÇO DUMP1090SQL, 7
+05. VERIFICAÇÃO, 8
+06. ARQUIVO 'DUMP1090SQL.INI', 9
+07. ESTRUTURA DAS PASTAS, 10
+08. CRIAR UM RELATORIO, 11
+09. FORMATO DOS ARQUIVOS .xls “ALARMA RUÍDOS", 16
+10. DUMP1090SQL COM A OPÇÃO "INTRACTIVE", 16
+11. AJUDA EM LINHA DE COMANDO, 17
+12. SERVIDOR DUMP1090, 18
 
 *Ler "<b>[dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc)</b>" para mais informações* (em francês!!! mas é fácil de entender...).
 
 **Command line**
 $ dump1090sql --help
 
-Usage:
-dump1090sql [options]
+*Usage:*
+$ dump1090sql [option(s)]
 
-Options:
+*Options:*
   -h, --help                 Show this help message and exit
+  
       --ip "ip"              Set HTTP server IP (default: 127.0.0.1)
+      
       --port "port"          Set HTTP server port (default: 8080)
+      
       --delay "seconds"      Set delay before reconnecting on lost connexion
+      
   -s, --sql                  Insert into SQLite database
+  
       --sqlfile "database"   Set SQLite database filename
+      
   -t, --txt                  Write to txt file
+  
       --txtfile "file"       Set txt output filename
+      
   -e, --exclude              Exclude inconsistent data
       --maxalt "altitude"    Set maxalt altitude flight
       --maxdist "distance"   Set maximum distance between flight and station
@@ -73,4 +81,3 @@ Options:
   -v, --version              Show software version
 
 Type CTRL+C to exit
-
