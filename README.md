@@ -38,13 +38,12 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 
 **Command line**
 <p>$ dump1090sql --help</p>
-<br/>
+
 *Usage:*
 <p>$ dump1090sql [option(s)]</p>
-<br/>
+
 *Options:*
 ```
-
   -h, --help                 Show this help message and exit
       --ip "ip"              Set HTTP server IP (default: 127.0.0.1)
       --port "port"          Set HTTP server port (default: 8080)
