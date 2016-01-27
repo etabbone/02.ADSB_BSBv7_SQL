@@ -34,3 +34,43 @@ Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows d
 12. SERVIDOR DUMP1090                           18
 
 *Ler "<b>[dump1090sql](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/dump1090sql.doc)</b>" para mais informações* (em francês!!! mas é fácil de entender...).
+
+**Command line**
+$ dump1090sql --help
+
+Usage:
+dump1090sql [options]
+
+Options:
+  -h, --help                 Show this help message and exit
+      --ip "ip"              Set HTTP server IP (default: 127.0.0.1)
+      --port "port"          Set HTTP server port (default: 8080)
+      --delay "seconds"      Set delay before reconnecting on lost connexion
+  -s, --sql                  Insert into SQLite database
+      --sqlfile "database"   Set SQLite database filename
+  -t, --txt                  Write to txt file
+      --txtfile "file"       Set txt output filename
+  -e, --exclude              Exclude inconsistent data
+      --maxalt "altitude"    Set maxalt altitude flight
+      --maxdist "distance"   Set maximum distance between flight and station
+      --ifile "file"         Load Excel "file" into database (need --sqlfile)
+      --report               Make report from database (need --sqlfile)
+      --extdb "database"     Add flights infos (need --report or --ireport)
+      --ireport "file"       Add flights infos to report "file" (need --extdb)
+      --opencsv              Open csv report file (need --report)
+      --zip "file"           Compress all files in one "zip file"
+      --email                Send end of month email, (need --zip)
+      --remove               Remove files after compression (need --zip)
+      --lat "latitude"       Set latitude of local station (DD)
+      --lon "longitude"      Set longitude of local station (DD)
+      --alt "altitude"       Set altitude of local station (meters)
+      --sta "name"           Set local station name
+      --metric               Use metric units (meters, km/h, ...)
+  -q, --quiet                Disable all output
+  -i, --interactive          Show all informations
+      --pause                Enable pauses during process
+      --log                  Create a log file
+  -v, --version              Show software version
+
+Type CTRL+C to exit
+
