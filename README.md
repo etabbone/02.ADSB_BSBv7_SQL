@@ -1,6 +1,6 @@
 # 02.ADSB_BSBv7_SQL
 **Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
->>Description ".doc" du projet en français.<<
+>>Description ".doc" du projet en français.
 
 Este documento descreve a instalação de dois programas para tratar os dados ADS-B (sinais de transponders dos aviões comerciais) a partir do programa 'dump1090':
 
