@@ -1,6 +1,9 @@
 # 02.ADSB_BSBv7_SQL
-**Python script to decode, save into database and create report from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
->>Description ".doc" du projet en français.
+**Python script to decode, save into database and create reports from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
+
+>> Description ".doc" du projet en français. Download: https://github.com/etabbone/02.ADSB_BSBv7_SQL/raw/master/dump1090sql.doc
+
+'[dump1090](https://github.com/MalcolmRobb/dump1090)' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’. Este projeto utiliza duas versões modificadas do programa dump1090 original.
 
 Este documento descreve a instalação de dois programas para tratar os dados ADS-B (sinais de transponders dos aviões comerciais) a partir do programa 'dump1090':
 
@@ -13,9 +16,6 @@ Esses programas funcionam nos ambientes Windows, Linux ou OS X e utilizam script
 
 Na versão Windows apresentado aqui, o script Python foi compilado em um único arquivo executável .exe para maior praticidade. Todos os arquivos devem estar na pasta 'c:\ dump1090sql' (modificar os arquivos de configuração .ini para trocar de pasta).
 Baixe e descompacte o arquivo 'dump1090-win’ na mesma pasta (versão Windows do programa Linux DUMP1090). Pode-se também instalar o programa SQLiteStudio para verificar o conteúdo das bases de dados, de preferência em uma subpasta (http://sqlitestudio.pl/).
-
-
-'[dump1090](https://github.com/MalcolmRobb/dump1090)' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’.
 
 ![alt tag](https://github.com/etabbone/02.ADSB_BSBv7_SQL/blob/master/fluxo%20de%20dados.jpg)
 
