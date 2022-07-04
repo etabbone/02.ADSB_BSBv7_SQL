@@ -1,7 +1,7 @@
 # 02.ADSB_BSBv7_SQL
 **Python script to decode, save into database and create reports from an DUMP1090 JSON stream (ADS-B Mode S decoder).**
 
->> Description ".doc" du projet en français. Download: https://github.com/etabbone/02.ADSB_BSBv7_SQL/raw/master/dump1090sql.doc
+>> Download de la description du [projet en français](https://github.com/etabbone/02.ADSB_BSBv7_SQL/raw/master/dump1090sql.doc).
 
 '[dump1090](https://github.com/MalcolmRobb/dump1090)' foi escrito por Salvatore Sanfilippo antirez@gmail.com e esta sendo distribuído sobre licença ‘BSD three clause license’. Este projeto utiliza duas versões modificadas do programa dump1090 original.
 
